@@ -156,7 +156,7 @@ export default function LoadingScreen() {
             transition={{ repeat: Number.POSITIVE_INFINITY, duration: 0.5 }}
           >
             <Image
-              src="/images/mario-running.gif"
+              src="/images/mario-running.png"
               alt="Mario Running"
               width={60}
               height={60}
