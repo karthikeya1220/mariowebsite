@@ -445,7 +445,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-6 md:mb-0">
             <Link href="#" className="transition-transform hover:scale-110">
               <Image
-                src="/images/gamecube.png"
+                src="/images/game.jpg"
                 alt="Nintendo GameCube"
                 width={100}
                 height={40}
@@ -454,7 +454,7 @@ export default function Home() {
             </Link>
             <Link href="#" className="transition-transform hover:scale-110">
               <Image
-                src="/images/nintendo-ds.png"
+                src="/images/nintendo-ds.jpg"
                 alt="Nintendo DS"
                 width={100}
                 height={40}
@@ -475,7 +475,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center md:justify-end gap-6">
             <Link href="#" className="transition-transform hover:scale-110">
               <Image
-                src="/images/esrb.png"
+                src="/images/e.jpg"
                 alt="ESRB Rating"
                 width={60}
                 height={80}
