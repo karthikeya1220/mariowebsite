@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mario-blue: #0066b3;
+  --mario-red: #cc0000;
+  --mario-yellow: #ffcc00;
+}
+
+@font-face {
+  font-family: "Super Mario";
+  src: url("/fonts/super-mario.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Super Mario", Arial, Helvetica, sans-serif;
+  background-color: var(--mario-blue);
+}
+
+/* Custom text stroke for browsers that don't support -webkit-text-stroke */
+.stroke-black {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Improved cloud animations */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 150px;
+  height: 60px;
+  filter: blur(5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.cloud-1 {
+  top: 10%;
+  left: -150px;
+  animation: float-right 60s linear infinite;
+}
+
+.cloud-2 {
+  top: 30%;
+  right: -150px;
+  animation: float-left 80s linear infinite;
+}
+
+.cloud-3 {
+  top: 70%;
+  left: -150px;
+  animation: float-right 70s linear infinite;
+}
+
+/* Enhanced floating coins animation */
+.coin {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.7));
+  animation: float-up 15s linear infinite;
+  z-index: 1;
+}
+
+.coin-1 {
+  left: 15%;
+  top: 80%;
+  animation-delay: 0s;
+}
+
+.coin-2 {
+  left: 75%;
+  top: 90%;
+  animation-delay: 5s;
+}
+
+.coin-3 {
+  left: 45%;
+  top: 85%;
+  animation-delay: 10s;
+}
+
+/* Enhanced star animations */
+.star {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+  animation: twinkle 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+.star-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 15%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.star-3 {
+  top: 60%;
+  left: 85%;
+  animation-delay: 4s;
+}
+
+.star-4 {
+  top: 75%;
+  left: 15%;
+  animation-delay: 6s;
+}
+
+/* Improved animations */
+@keyframes float-right {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(calc(50vw + 75px)) translateY(-20px);
+  }
+  to {
+    transform: translateX(calc(100vw + 150px)) translateY(0);
+  }
+}
+
+@keyframes float-left {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(calc(-50vw - 75px)) translateY(-20px);
+  }
+  to {
+    transform: translateX(calc(-100vw - 150px)) translateY(0);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-400px) rotate(180deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.2) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(0.8) rotate(90deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: scale(1.1) rotate(135deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.5) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Add premium button effects */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(204, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 0, 0, 0);
+  }
+}
+
+.pulse-effect {
+  animation: pulse 2s infinite;
+}
+
+/* Add responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+  .cloud {
+    width: 100px;
+    height: 40px;
+  }
+
+  .coin {
+    font-size: 18px;
+  }
+
+  .star {
+    font-size: 16px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
