@@ -445,7 +445,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-6 md:mb-0">
             <Link href="#" className="transition-transform hover:scale-110">
               <Image
-                src="/images/mario-pointing.jpg"
+                src="/images/game.jpg"
                 alt="Nintendo GameCube"
                 width={100}
                 height={40}
