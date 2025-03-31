@@ -443,15 +443,7 @@ export default function Home() {
           className="w-full flex flex-col md:flex-row justify-between items-center mt-12 pb-8"
         >
           <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-6 md:mb-0">
-            <Link href="#" className="transition-transform hover:scale-110">
-              <Image
-                src="/images/mario-pointing.jpg"
-                alt="Nintendo GameCube"
-                width={100}
-                height={40}
-                className="h-auto drop-shadow-md"
-              />
-            </Link>
+           
             <Link href="#" className="transition-transform hover:scale-110">
               <Image
                 src="/images/nintendo-ds.jpg"
